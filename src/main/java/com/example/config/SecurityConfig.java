@@ -3,6 +3,7 @@ package com.example.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.ldap.core.ContextSource;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -24,7 +25,7 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Autowired
+    @Bean
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .ldapAuthentication()
@@ -36,5 +37,6 @@ public class SecurityConfig {
                 .passwordEncoder(new BCryptPasswordEncoder())
                 .passwordAttribute("userPassword");
     }
+
 
 }
