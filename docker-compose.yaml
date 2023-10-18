@@ -5,8 +5,8 @@ services:
     image: osixia/openldap:1.5.0
     container_name: openldap
     environment:
-      LDAP_ORGANISATION: Example Me.
-      LDAP_DOMAIN: example.com
+      LDAP_ORGANISATION: TEN Inc.
+      LDAP_DOMAIN: ten1010.io
       LDAP_BASE_DN: "" # default # if empty automatically set from LDAP_DOMAIN
       LDAP_ADMIN_PASSWORD: admin    # default
       LDAP_CONFIG_PASSWORD: config  # default
@@ -20,8 +20,8 @@ services:
     ports:
       - "389:389"
       - "636:636"
-    domainname: example.com # important: same as hostname
-    hostname: example.com
+    domainname: ten1010.io # important: same as hostname
+    hostname: ten1010.io
 
   phpldapadmin:
     image: osixia/phpldapadmin:latest

@@ -1,10 +1,10 @@
-dn: dc=ten1010, dc=org
+dn: dc=ten1010, dc=io
 objectclass: top
 objectlcass: domain
 objectclass: extensibleObject
 dc: ten1010
 
-dn: ou=groups,dc=ten1010,dc=org
+dn: ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: organizationalUnit
 ou: groups
@@ -12,42 +12,42 @@ ou: groups
 
 # below department
 
-dn: ou=operations,ou=groups,dc=ten1010,dc=org
+dn: ou=operations,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: organizationalUnit
-ou: operation
+ou: operations
 
-dn: ou=administrations,ou=groups,dc=ten1010,dc=org
+dn: ou=administrations,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: organizationalUnit
 ou: administrations
 
-dn: ou=services,ou=groups,dc=ten1010,dc=org
+dn: ou=services,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: organizationalUnit
 ou: services
 
-dn: ou=sales,ou=groups,dc=ten1010,dc=org
+dn: ou=sales,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: organizationalUnit
 ou: sales
 
-dn: ou=marketing,ou=groups,dc=ten1010,dc=org
+dn: ou=marketing,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: organizationalUnit
 ou: marketing
 
-dn: ou=products,ou=groups,dc=ten1010,dc=org
+dn: ou=products,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: organizationalUnit
 ou: products
 
-dn: ou=accounts,ou=groups,dc=ten1010,dc=org
+dn: ou=accounting,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: organizationalUnit
-ou: accounts
+ou: accounting
 
-dn: ou=engineering,ou=groups,dc=ten1010,dc=org
+dn: ou=engineering,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: organizationalUnit
 ou: engineering
@@ -251,20 +251,9 @@ sn: Park
 uid: joonwoo.park@ten1010.io
 userPassword: joonwoo
 
-# example for group
-
-dn: cn=developers,ou=groups,dc=springframework,dc=org
-objectclass: top
-objectclass: groupOfUniqueNames
-cn: developers
-ou: developer
-uniqueMember: uid=ben,ou=people,dc=springframework,dc=org
-uniqueMember: uid=bob,ou=people,dc=springframework,dc=org
-
-
 # Group define
 
-dn: cn=operations,ou=operations,ou=groups,dc=springframework,dc=org
+dn: cn=operations,ou=operations,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: groupOfUniqueNames
 cn: operations
@@ -272,7 +261,7 @@ ou: operations
 uniqueMember: uid=sejin.oh@ten1010.io,ou=people,dc=ten1010,dc=io
 uniqueMember: uid=jaesub.lim@ten1010.io,ou=people,dc=ten1010,dc=io
 
-dn: cn=administrations,ou=administractions,ou=groups,dc=ten1010,dc=io
+dn: cn=administrations,ou=administrations,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: groupOfUniqueNames
 cn: administrations

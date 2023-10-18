@@ -1,6 +1,6 @@
 cp ./init/env.startup.yaml ./environment/config/env.startup.yaml
 
-docker-compose up
+docker-compose up -d
 
 # docker run \
 # 	--name ldap \
