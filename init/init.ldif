@@ -1,8 +1,8 @@
-dn: dc=ten1010, dc=io
-objectclass: top
-objectlcass: domain
-objectclass: extensibleObject
-dc: ten1010
+#dn: dc=ten1010, dc=io
+#objectclass: top
+#objectlcass: domain
+#objectclass: extensibleObject
+#dc: ten1010
 
 dn: ou=groups,dc=ten1010,dc=io
 objectclass: top
