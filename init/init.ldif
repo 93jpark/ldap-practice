@@ -1,16 +1,25 @@
-#dn: dc=ten1010, dc=io
-#objectclass: top
-#objectlcass: domain
-#objectclass: extensibleObject
-#dc: ten1010
+
+#########################################
+# define organization - groups, people  #
+#########################################
 
 dn: ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: organizationalUnit
 ou: groups
 
+dn: ou=people,dc=ten1010,dc=io
+objectClass: organizationalUnit
+ou: people
 
-# below department
+
+
+
+
+
+##########################
+#  department entities   #
+##########################
 
 dn: ou=operations,ou=groups,dc=ten1010,dc=io
 objectclass: top
@@ -56,13 +65,9 @@ ou: engineering
 
 
 
-
-
-dn: ou=people,dc=ten1010,dc=io
-objectClass: organizationalUnit
-ou: people
-
-# below user
+###################
+#  user entities  #
+###################
 
 dn: uid=sejin.oh@ten1010.io,ou=people,dc=ten1010,dc=io
 objectClass: top
@@ -84,7 +89,6 @@ sn: Lim
 uid: jaesub.lim@ten1010.io
 userPassword: jaesub
 
-
 dn: uid=jiwon.jeong@ten1010.io,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
@@ -105,8 +109,6 @@ sn: Oh
 uid: kyeongran.oh@ten1010.io
 userPassword: kyeongran
 
-
-
 dn: uid=seongmin.hong@ten1010.io,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
@@ -116,7 +118,6 @@ cn: Seongmin Hong
 sn: Hong
 uid: seongmin.hong@ten1010.io
 userPassword: seongmin
-
 
 dn: uid=sangah.choi@ten1010.io,ou=people,dc=ten1010,dc=io
 objectClass: top
@@ -178,7 +179,6 @@ sn: Kim
 uid: jiheon.kim@ten1010.io
 userPassword: jiheon
 
-
 dn: uid=hyungil.bae@ten1010.io,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
@@ -198,7 +198,6 @@ cn: Hyeongdeok Yoon
 sn: Yoon
 uid: hyeongdeok.yoon@ten1010.io
 userPassword: hyeongdeok
-
 
 dn: uid=jungwon.hur@ten1010.io,ou=people,dc=ten1010,dc=io
 objectClass: top
@@ -240,7 +239,6 @@ sn: Cho
 uid: youngrae.cho@ten1010.io
 userPassword: youngrae
 
-
 dn: uid=joonwoo.park@ten1010.io,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
@@ -251,7 +249,15 @@ sn: Park
 uid: joonwoo.park@ten1010.io
 userPassword: joonwoo
 
-# Group define
+
+
+
+
+
+
+##################
+# group entities #
+##################
 
 dn: cn=operations,ou=operations,ou=groups,dc=ten1010,dc=io
 objectclass: top
@@ -268,7 +274,6 @@ cn: administrations
 ou: administrations
 uniqueMember: uid=jiwon.jeong@ten1010.io,ou=people,dc=ten1010,dc=io
 
-
 dn: cn=services,ou=services,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: groupOfUniqueNames
@@ -277,14 +282,12 @@ ou: services
 uniqueMember: uid=jiwon.jeong@ten1010.io,ou=people,dc=ten1010,dc=io
 uniqueMember: uid=kyeongran.oh@ten1010.io,ou=people,dc=ten1010,dc=io
 
-
 dn: cn=sales,ou=sales,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: groupOfUniqueNames
 cn: sales
 ou: sales
 uniqueMember: uid=seongmin.hong@ten1010.io,ou=people,dc=ten1010,dc=io
-
 
 dn: cn=marketing,ou=marketing,ou=groups,dc=ten1010,dc=io
 objectclass: top
@@ -293,14 +296,12 @@ cn: marketing
 ou: marketing
 uniqueMember: uid=sangah.choi@ten1010.io,ou=people,dc=ten1010,dc=io
 
-
 dn: cn=products,ou=products,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: groupOfUniqueNames
 cn: products
 ou: products
 uniqueMember: uid=hyungkyu.cho@ten1010.io,ou=people,dc=ten1010,dc=io
-
 
 dn: cn=accounting,ou=accounting,ou=groups,dc=ten1010,dc=io
 objectclass: top
@@ -309,7 +310,6 @@ cn: accounting
 ou: accounting
 uniqueMember: uid=jiyoon.lee@ten1010.io,ou=people,dc=ten1010,dc=io
 
-
 dn: cn=frontend,ou=engineering,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: groupOfUniqueNames
@@ -317,7 +317,6 @@ cn: frontend
 ou: engineering
 uniqueMember: uid=yoona.lee@ten1010.io,ou=people,dc=ten1010,dc=io
 uniqueMember: uid=yeji.kim@ten1010.io,ou=people,dc=ten1010,dc=io
-
 
 dn: cn=backend,ou=engineering,ou=groups,dc=ten1010,dc=io
 objectclass: top
