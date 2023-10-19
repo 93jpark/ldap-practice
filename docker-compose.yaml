@@ -4,19 +4,11 @@ services:
   openldap:
     image: osixia/openldap:latest
     container_name: ldap
-    environment:
-      LDAP_ORGANISATION: TEN Inc.
-      LDAP_DOMAIN: ten1010.io
-      LDAP_BASE_DN: "" # default # if empty automatically set from LDAP_DOMAIN
-      LDAP_ADMIN_PASSWORD: admin    # default
-      LDAP_CONFIG_PASSWORD: config  # default
-      KEEP_EXISTING_CONFIG: "false"
-      LDAP_REMOVE_CONFIG_AFTER_SETUP: "false"
     tty: true
     stdin_open: true
     volumes:
-      - ./environment/config:/container/environment/01-custom
-      - ./init:/container/service/slapd/assets/config/bootstrap/ldif/custom
+      - ./ldap/environment/config:/container/environment/01-custom
+      - ./ldap/init:/container/service/slapd/assets/config/bootstrap/ldif/custom
     ports:
       - "389:389"
       - "636:636"
