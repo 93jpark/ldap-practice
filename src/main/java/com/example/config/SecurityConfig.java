@@ -3,6 +3,7 @@ package com.example.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.ldap.core.AuthenticationSource;
 import org.springframework.ldap.core.ContextSource;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.core.support.LdapContextSource;
@@ -16,6 +17,8 @@ import org.springframework.security.ldap.authentication.BindAuthenticator;
 import org.springframework.security.ldap.authentication.LdapAuthenticationProvider;
 import org.springframework.security.ldap.search.FilterBasedLdapUserSearch;
 import org.springframework.security.web.SecurityFilterChain;
+
+import javax.naming.ldap.LdapContext;
 
 @Configuration
 public class SecurityConfig {
@@ -38,6 +41,7 @@ public class SecurityConfig {
         return provider;
     }
 
+    public LdapAuthenticationProvider
     @Bean
     BindAuthenticator authenticator() {
         FilterBasedLdapUserSearch search = new FilterBasedLdapUserSearch(
