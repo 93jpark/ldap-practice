@@ -23,7 +23,7 @@ public class PersonRepoImpl {
             query().where("objectclass").is("person"),
             new AttributesMapper<String>() {
                 public String mapFromAttributes(Attributes attrs)
-                        throws NamingException {
+                        throws javax.naming.NamingException {
                     return (String) attrs.get("cn").get();
                 }
             });

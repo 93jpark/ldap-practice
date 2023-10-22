@@ -340,7 +340,7 @@ uniqueMember: uid=joonwoo.park@ten1010.io,ou=people,dc=ten1010,dc=io
 # role entities #
 ##################
 
-dn: cn=roles,ou=roles,dc=ten1010,dc=io
+dn: cn=roles,ou=roles,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: groupOfUniqueNames
 cn: roles
