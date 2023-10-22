@@ -1,0 +1,322 @@
+dn: dc=ten1010,dc=io
+objectClass: top
+objectClass: domain
+
+dn: ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=people,dc=ten1010,dc=io
+objectClass: organizationalUnit
+ou: people
+
+dn: ou=roles,ou=groups,dc=ten1010,dc=io
+objectClass: organizationalUnit
+ou: roles
+
+dn: ou=operations,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: operations
+
+dn: ou=administrations,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: administrations
+
+dn: ou=services,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: services
+
+dn: ou=sales,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: sales
+
+dn: ou=marketing,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: marketing
+
+dn: ou=products,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: products
+
+dn: ou=accounting,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: accounting
+
+dn: ou=engineering,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: engineering
+
+
+
+dn: uid=sejin.oh@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Sejin Oh
+sn: Oh
+uid: sejin.oh@ten1010.io
+userPassword: sejin
+
+dn: uid=jaesub.lim@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Jaesub Lim
+sn: Lim
+uid: jaesub.lim@ten1010.io
+userPassword: jaesub
+
+dn: uid=jiwon.jeong@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Jiwon Jeong
+sn: Jeong
+uid: jiwon.jeong@ten1010.io
+userPassword: jiwon
+
+dn: uid=kyeongran.oh@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Kyeongran Oh
+sn: Oh
+uid: kyeongran.oh@ten1010.io
+userPassword: kyeongran
+
+dn: uid=seongmin.hong@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Seongmin Hong
+sn: Hong
+uid: seongmin.hong@ten1010.io
+userPassword: seongmin
+
+dn: uid=sangah.choi@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Sangah Choi
+sn: Choi
+uid: sangah.choi@ten1010.io
+userPassword: sangah
+
+dn: uid=hyungkyu.cho@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Hyungkyu Cho
+sn: Cho
+uid: hyungkyu.cho@ten1010.io
+userPassword: hyungkyu
+
+dn: uid=jiyoon.lee@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Jiyoon Lee
+sn: Lee
+uid: jiyoon.lee@ten1010.io
+userPassword: jiyoon
+
+dn: uid=yoona.lee@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Yoona Lee
+sn: Lee
+uid: yoona.lee@ten1010.io
+userPassword: yoona
+
+dn: uid=yeji.kim@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Yeji Kim
+sn: Kim
+uid: yeji.kim@ten1010.io
+userPassword: yeji
+
+dn: uid=jiheon.kim@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Jiheon Kim
+sn: Kim
+uid: jiheon.kim@ten1010.io
+userPassword: jiheon
+
+dn: uid=hyungil.bae@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Hyungil Bae
+sn: Bae
+uid: hyungil.bae@ten1010.io
+userPassword: hyungil
+
+dn: uid=hyeongdeok.yoon@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Hyeongdeok Yoon
+sn: Yoon
+uid: hyeongdeok.yoon@ten1010.io
+userPassword: hyeongdeok
+
+dn: uid=jungwon.hur@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Jungwon Hur
+sn: Hur
+uid: jungwon.hur@ten1010.io
+userPassword: jungwon
+
+dn: uid=youngjun.lee@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Yongjun Lee
+sn: Lee
+uid: youngjun.lee@ten1010.io
+userPassword: youngjun
+
+dn: uid=soohyun.jung@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Soohyun Jung
+sn: Jung
+uid: soohyun.jung@ten1010.io
+userPassword: soohyun
+
+dn: uid=youngrae.cho@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Youngrae Cho
+sn: Cho
+uid: youngrae.cho@ten1010.io
+userPassword: youngrae
+
+dn: uid=joonwoo.park@ten1010.io,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Joonwoo Park
+sn: Park
+uid: joonwoo.park@ten1010.io
+userPassword: joonwoo
+
+
+
+dn: cn=operations,ou=operations,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: operations
+ou: operations
+uniqueMember: uid=sejin.oh@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=jaesub.lim@ten1010.io,ou=people,dc=ten1010,dc=io
+
+dn: cn=administrations,ou=administrations,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: administrations
+ou: administrations
+uniqueMember: uid=jiwon.jeong@ten1010.io,ou=people,dc=ten1010,dc=io
+
+dn: cn=services,ou=services,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: services
+ou: services
+uniqueMember: uid=jiwon.jeong@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=kyeongran.oh@ten1010.io,ou=people,dc=ten1010,dc=io
+
+dn: cn=sales,ou=sales,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: sales
+ou: sales
+uniqueMember: uid=seongmin.hong@ten1010.io,ou=people,dc=ten1010,dc=io
+
+dn: cn=marketing,ou=marketing,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: marketing
+ou: marketing
+uniqueMember: uid=sangah.choi@ten1010.io,ou=people,dc=ten1010,dc=io
+
+dn: cn=products,ou=products,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: products
+ou: products
+uniqueMember: uid=hyungkyu.cho@ten1010.io,ou=people,dc=ten1010,dc=io
+
+dn: cn=accounting,ou=accounting,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: accounting
+ou: accounting
+uniqueMember: uid=jiyoon.lee@ten1010.io,ou=people,dc=ten1010,dc=io
+
+dn: cn=frontend,ou=engineering,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: frontend
+ou: engineering
+uniqueMember: uid=yoona.lee@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=yeji.kim@ten1010.io,ou=people,dc=ten1010,dc=io
+
+dn: cn=backend,ou=engineering,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: backend
+ou: engineering
+uniqueMember: uid=jiheon.kim@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=hyungil.bae@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=hyeongdeok.yoon@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=jungwon.hur@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=youngjun.lee@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=soohyun.jung@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=youngrae.cho@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=joonwoo.park@ten1010.io,ou=people,dc=ten1010,dc=io
+
+
+dn: cn=roles,ou=roles,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: roles
+ou: groups
+uniqueMember: uid=joonwoo.park@ten1010.io,ou=people,dc=ten1010,dc=io
+uniqueMember: uid=youngrae.cho@ten1010.io,ou=people,dc=ten1010,dc=io

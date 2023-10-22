@@ -7,10 +7,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@EnableWebSecurity
+//@EnableWebSecurity
 public class SecurityConfig {
 
     @Value("${spring.ldap.url}")
@@ -19,8 +20,20 @@ public class SecurityConfig {
     @Value("${spring.ldap.port}")
     private String ldapPort;
 
+    @Value("${spring.ldap.root")
+    private String ldapRoot;
+
     @Value("${spring.ldap.userDnPattern}")
     private String userDnPattern;
+
+    @Value("${spring.ldap.userSearchBase")
+    private String userSearchBase;
+
+    @Value("${spring.ldap.userSearchPattern")
+    private String userSearchPattern;
+
+    @Value("${spring.ldap.userSearchFilter")
+    private String userSearchFilter;
 
     @Value("${spring.ldap.groupSearchBase}")
     private String groupSearchBase;
@@ -44,27 +57,31 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-//        http.authorizeHttpRequests((requests) -> requests.requestMatchers("/", "/home", "/unsecuregreetings")
-//                .permitAll().anyRequest().fullyAuthenticated())
-//                .formLogin((form) -> form.loginPage("/login").permitAll()).logout((logout) -> logout.permitAll());
-
-        http.authorizeHttpRequests((requests)->requests.requestMatchers("/", "/home", "/unsecuregreetings").permitAll().anyRequest()
-                .fullyAuthenticated()).formLogin();
+        http
+                .authorizeHttpRequests()
+                .anyRequest().fullyAuthenticated()
+                .and()
+                .formLogin();
 
         return http.build();
     }
 
     @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.ldapAuthentication()
-                .userDnPatterns(userDnPattern)
-                .groupSearchBase(groupSearchBase)
-                .groupSearchFilter(groupSearchFilter)
+        auth
+                .ldapAuthentication()
+                .userDnPatterns("uid={0},ou=people")
+//                .userSearchBase(userSearchBase)
+//                .userSearchFilter(userSearchFilter)
+                .groupSearchBase("ou=groups")
                 .contextSource()
-                .url(ldapURL)
-                .port(Integer.parseInt(ldapPort))
-                .managerDn(managerDn)
-                .managerPassword(managerPassword);
+                .url("ldap://localhost:8389/dc=springframework,dc=org")
+//                .port(Integer.parseInt(ldapPort))
+//                .root(ldapRoot)
+                .and()
+                .passwordCompare()
+                .passwordEncoder(new BCryptPasswordEncoder())
+                .passwordAttribute("userPassword");
     }
 
 
