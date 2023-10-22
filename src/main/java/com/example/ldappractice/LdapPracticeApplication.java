@@ -3,6 +3,7 @@ package com.example.ldappractice;
 import com.example.config.PlaintextPasswordEncoder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 
 import javax.naming.AuthenticationException;
 import javax.naming.Context;
@@ -11,7 +12,7 @@ import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
 import java.util.Properties;
 
-@SpringBootApplication
+@SpringBootApplication//(exclude= {UserDetailsServiceAutoConfiguration.class})
 public class LdapPracticeApplication {
 
     public static void main(String[] args) {
