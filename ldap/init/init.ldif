@@ -12,7 +12,7 @@ dn: ou=people,dc=ten1010,dc=io
 objectClass: organizationalUnit
 ou: people
 
-dn: ou=roles,dc=ten1010,dc=io
+dn: ou=roles,ou=groups,dc=ten1010,dc=io
 objectClass: organizationalUnit
 ou: roles
 
@@ -63,6 +63,15 @@ objectclass: top
 objectclass: organizationalUnit
 ou: engineering
 
+dn: ou=frontend,ou=engineering,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: frontend
+
+dn: ou=backend,ou=engineering,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: organizationalUnit
+ou: backend
 
 
 
@@ -71,184 +80,202 @@ ou: engineering
 #  user entities  #
 ###################
 
-dn: uid=sejin.oh@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=sejin,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Sejin Oh
 sn: Oh
-uid: sejin.oh@ten1010.io
+mail: sejin.oh@ten1010.io
+uid: sejin
 userPassword: sejin
 
-dn: uid=jaesub.lim@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=jaesub,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Jaesub Lim
 sn: Lim
-uid: jaesub.lim@ten1010.io
+mail: jaesub.lim@ten1010.io
+uid: jaesub
 userPassword: jaesub
 
-dn: uid=jiwon.jeong@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=jiwon,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Jiwon Jeong
 sn: Jeong
-uid: jiwon.jeong@ten1010.io
+mail: jiwon.jeong@ten1010.io
+uid: jiwon
 userPassword: jiwon
 
-dn: uid=kyeongran.oh@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=kyeongran,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Kyeongran Oh
 sn: Oh
-uid: kyeongran.oh@ten1010.io
+mail: kyeongran.oh@ten1010.io
+uid: kyeongran
 userPassword: kyeongran
 
-dn: uid=seongmin.hong@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=seongmin,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Seongmin Hong
 sn: Hong
-uid: seongmin.hong@ten1010.io
+mail: seongmin.hong@ten1010.io
+uid: seongmin
 userPassword: seongmin
 
-dn: uid=sangah.choi@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=sangah,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Sangah Choi
 sn: Choi
-uid: sangah.choi@ten1010.io
+mail: sangah.choi@ten1010.io
+uid: sangah
 userPassword: sangah
 
-dn: uid=hyungkyu.cho@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=hyungkyu,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Hyungkyu Cho
 sn: Cho
-uid: hyungkyu.cho@ten1010.io
+mail: hyungkyu.cho@ten1010.io
+uid: hyungky
 userPassword: hyungkyu
 
-dn: uid=jiyoon.lee@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=jiyoon,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Jiyoon Lee
 sn: Lee
-uid: jiyoon.lee@ten1010.io
+mail: jiyoon.lee@ten1010.io
+uid: jiyoon
 userPassword: jiyoon
 
-dn: uid=yoona.lee@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=yoona,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Yoona Lee
 sn: Lee
-uid: yoona.lee@ten1010.io
+mail: yoona.lee@ten1010.io
+uid: yoona
 userPassword: yoona
 
-dn: uid=yeji.kim@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=yeji,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Yeji Kim
 sn: Kim
-uid: yeji.kim@ten1010.io
+mail: yeji.kim@ten1010.io
+uid: yeji
 userPassword: yeji
 
-dn: uid=jiheon.kim@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=jiheon,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Jiheon Kim
 sn: Kim
-uid: jiheon.kim@ten1010.io
+mail: jiheon.kim@ten1010.io
+uid: jiheon
 userPassword: jiheon
 
-dn: uid=hyungil.bae@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=hyungil,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Hyungil Bae
 sn: Bae
-uid: hyungil.bae@ten1010.io
+mail: hyungil.bae@ten1010.io
+uid: hyungil
 userPassword: hyungil
 
-dn: uid=hyeongdeok.yoon@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=hyeongdeok,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Hyeongdeok Yoon
 sn: Yoon
-uid: hyeongdeok.yoon@ten1010.io
+mail: hyeongdeok.yoon@ten1010.io
+uid: hyeongdeok
 userPassword: hyeongdeok
 
-dn: uid=jungwon.hur@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=jungwon,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Jungwon Hur
 sn: Hur
-uid: jungwon.hur@ten1010.io
+mail: jungwon.hur@ten1010.io
+uid: jungwon
 userPassword: jungwon
 
-dn: uid=youngjun.lee@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=youngjun,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Yongjun Lee
 sn: Lee
-uid: youngjun.lee@ten1010.io
+mail: youngjun.lee@ten1010.io
+uid: youngjun
 userPassword: youngjun
 
-dn: uid=soohyun.jung@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=soohyun,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Soohyun Jung
 sn: Jung
-uid: soohyun.jung@ten1010.io
+mail: soohyun.jung@ten1010.io
+uid: soohyun
 userPassword: soohyun
 
-dn: uid=youngrae.cho@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=youngrae,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Youngrae Cho
 sn: Cho
-uid: youngrae.cho@ten1010.io
+mail: youngrae.cho@ten1010.io
+uid: youngrae
 userPassword: youngrae
 
-dn: uid=joonwoo.park@ten1010.io,ou=people,dc=ten1010,dc=io
+dn: uid=joonwoo,ou=people,dc=ten1010,dc=io
 objectClass: top
 objectClass: person
 objectClass: organizationalPerson
 objectClass: inetOrgPerson
 cn: Joonwoo Park
 sn: Park
-uid: joonwoo.park@ten1010.io
+mail: joonwoo.park@ten1010.io
+uid: joonwoo
 userPassword: joonwoo
 
 
@@ -312,19 +339,19 @@ cn: accounting
 ou: accounting
 uniqueMember: uid=jiyoon.lee@ten1010.io,ou=people,dc=ten1010,dc=io
 
-dn: cn=frontend,ou=engineering,ou=groups,dc=ten1010,dc=io
+dn: cn=frontend,ou=frontend,ou=engineering,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: groupOfUniqueNames
 cn: frontend
-ou: engineering
+ou: frontend
 uniqueMember: uid=yoona.lee@ten1010.io,ou=people,dc=ten1010,dc=io
 uniqueMember: uid=yeji.kim@ten1010.io,ou=people,dc=ten1010,dc=io
 
-dn: cn=backend,ou=engineering,ou=groups,dc=ten1010,dc=io
+dn: cn=backend,ou=backend,ou=engineering,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: groupOfUniqueNames
 cn: backend
-ou: engineering
+ou: backend
 uniqueMember: uid=jiheon.kim@ten1010.io,ou=people,dc=ten1010,dc=io
 uniqueMember: uid=hyungil.bae@ten1010.io,ou=people,dc=ten1010,dc=io
 uniqueMember: uid=hyeongdeok.yoon@ten1010.io,ou=people,dc=ten1010,dc=io
@@ -340,10 +367,73 @@ uniqueMember: uid=joonwoo.park@ten1010.io,ou=people,dc=ten1010,dc=io
 # role entities #
 ##################
 
-dn: cn=roles,ou=roles,dc=ten1010,dc=io
+dn: cn=operations_manager,ou=operations,ou=groups,dc=ten1010,dc=io
 objectclass: top
 objectclass: groupOfUniqueNames
-cn: roles
-ou: groups
-uniqueMember: uid=joonwoo.park@ten1010.io,ou=people,dc=ten1010,dc=io
-uniqueMember: uid=youngrae.cho@ten1010.io,ou=people,dc=ten1010,dc=io
+cn: operations_manager
+ou: operations
+uniqueMember: uid=joonwoo,ou=people,dc=ten1010,dc=io
+
+dn: cn=administrations_manager,ou=administrations,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: administrations_manager
+ou: administrations
+uniqueMember: uid=joonwoo,ou=people,dc=ten1010,dc=io
+
+dn: cn=services_manager,ou=services,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: services_manager
+ou: services
+uniqueMember: uid=joonwoo,ou=people,dc=ten1010,dc=io
+
+dn: cn=sales_manager,ou=sales,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: sales_manager
+ou: sales
+uniqueMember: uid=joonwoo,ou=people,dc=ten1010,dc=io
+
+dn: cn=marketing_manager,ou=marketing,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: marketing_manager
+ou: marketing
+uniqueMember: uid=joonwoo,ou=people,dc=ten1010,dc=io
+
+dn: cn=products_manager,ou=products,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: products_manager
+ou: products
+uniqueMember: uid=joonwoo,ou=people,dc=ten1010,dc=io
+
+dn: cn=accounting_manager,ou=accounting,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: accounting_manager
+ou: accounting
+uniqueMember: uid=joonwoo,ou=people,dc=ten1010,dc=io
+
+dn: cn=engineering_manager,ou=engineering,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: engineering_manager
+ou: engineering
+uniqueMember: uid=joonwoo,ou=people,dc=ten1010,dc=io
+
+dn: cn=frontend_manager,ou=frontend,ou=engineering,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: frontend_manager
+ou: frontend
+uniqueMember: uid=joonwoo,ou=people,dc=ten1010,dc=io
+
+dn: cn=backend_manager,ou=backend,ou=engineering,ou=groups,dc=ten1010,dc=io
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: backend_manager
+ou: backend
+uniqueMember: uid=joonwoo,ou=people,dc=ten1010,dc=io
+
