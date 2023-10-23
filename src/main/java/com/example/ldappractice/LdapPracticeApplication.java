@@ -20,9 +20,7 @@ public class LdapPracticeApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(LdapPracticeApplication.class, args);
-
-        testConnection();
-
+//        testConnection();
     }
 
     @Bean

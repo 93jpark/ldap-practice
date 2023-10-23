@@ -15,10 +15,4 @@ public class HomeController {
         return "Welcome to the home page!";
     }
 
-    @PostMapping("/unsecuregreetings")
-    public String unsecureGreetings(@RequestParam(name="email", required = true) String email, Model model) {
-        model.addAttribute("email", email);
-        return "unsecuregreetings";
-    }
-
 }

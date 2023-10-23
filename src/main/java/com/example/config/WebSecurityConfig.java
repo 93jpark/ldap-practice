@@ -1,53 +1,15 @@
 package com.example.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-//@EnableWebSecurity
-public class SecurityConfig {
-
-    @Value("${spring.ldap.url}")
-    private String ldapURL;
-
-    @Value("${spring.ldap.port}")
-    private String ldapPort;
-
-    @Value("${spring.ldap.root")
-    private String ldapRoot;
-
-    @Value("${spring.ldap.userDnPattern}")
-    private String userDnPattern;
-
-    @Value("${spring.ldap.userSearchBase")
-    private String userSearchBase;
-
-    @Value("${spring.ldap.userSearchPattern")
-    private String userSearchPattern;
-
-    @Value("${spring.ldap.userSearchFilter")
-    private String userSearchFilter;
-
-    @Value("${spring.ldap.groupSearchBase}")
-    private String groupSearchBase;
-
-    @Value("${spring.ldap.groupSearchFilter}")
-    private String groupSearchFilter;
-
-    @Value("${spring.ldap.managerDn}")
-    private String managerDn;
-
-    @Value("${spring.ldap.managerPassword}")
-    private String managerPassword;
-
-
+public class WebSecurityConfig {
 
     /*
     This example follow bind authentication.
@@ -58,7 +20,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests()
+                .authorizeRequests()
                 .anyRequest().fullyAuthenticated()
                 .and()
                 .formLogin();
@@ -68,21 +30,48 @@ public class SecurityConfig {
 
     @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        System.out.println("CHECKPOINT");
         auth
                 .ldapAuthentication()
                 .userDnPatterns("uid={0},ou=people")
-//                .userSearchBase(userSearchBase)
-//                .userSearchFilter(userSearchFilter)
                 .groupSearchBase("ou=groups")
                 .contextSource()
-                .url("ldap://localhost:8389/dc=springframework,dc=org")
-//                .port(Integer.parseInt(ldapPort))
-//                .root(ldapRoot)
+                .url("ldap://localhost:8389/dc=ten1010,dc=io")
                 .and()
                 .passwordCompare()
-                .passwordEncoder(new BCryptPasswordEncoder())
+                .passwordEncoder(new PlaintextPasswordEncoder())
                 .passwordAttribute("userPassword");
     }
+
+
+//    @Bean
+//    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//        http
+//                .authorizeRequests()
+//                    .anyRequest().fullyAuthenticated()
+//                    .and()
+//                .formLogin();
+//
+//        return http.build();
+//    }
+//
+//    @Autowired
+//    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+//        auth
+//                .ldapAuthentication()
+//                    .userDnPatterns("uid={0},ou=people")
+//    //                .userSearchBase(userSearchBase)
+//    //                .userSearchFilter(userSearchFilter)
+//                    .groupSearchBase("ou=groups")
+//                    .contextSource()
+//                        .url("ldap://localhost:8389/dc=springframework,dc=org")
+//    //                .port(Integer.parseInt(ldapPort))
+//    //                .root(ldapRoot)
+//                        .and()
+//                    .passwordCompare()
+//                        .passwordEncoder(new BCryptPasswordEncoder())
+//                        .passwordAttribute("userPassword");
+//    }
 
 
     /*

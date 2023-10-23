@@ -237,6 +237,15 @@ sn: Park
 uid: joonwoo.park@ten1010.io
 userPassword: joonwoo
 
+dn: uid=pjw,ou=people,dc=ten1010,dc=io
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: Joonwoo Park2
+sn: Park
+uid: pjw
+userPassword: pjw
 
 
 dn: cn=operations,ou=operations,ou=groups,dc=ten1010,dc=io
