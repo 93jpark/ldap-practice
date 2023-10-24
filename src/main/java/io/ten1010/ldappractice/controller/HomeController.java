@@ -10,4 +10,9 @@ public class HomeController {
     public String homeController() {
         return "Authenticated!";
     }
+
+    @GetMapping("/auth")
+    public String authValidate() {
+        return "Authorization";
+    }
 }

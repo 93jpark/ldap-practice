@@ -18,6 +18,8 @@ import org.springframework.security.ldap.authentication.LdapAuthenticationProvid
 import org.springframework.security.ldap.authentication.LdapAuthenticator;
 import org.springframework.security.ldap.ppolicy.PasswordPolicyAwareContextSource;
 import org.springframework.security.ldap.server.UnboundIdContainer;
+import org.springframework.security.ldap.userdetails.DefaultLdapAuthoritiesPopulator;
+import org.springframework.security.ldap.userdetails.LdapAuthoritiesPopulator;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -51,8 +53,8 @@ public class WebSecurityConfig {
     @Value("${spring.ldap.groupSearchBase}")
     private String groupSearchBase;
 
-//    @Value("${spring.ldap.groupSearchFilter")
-//    private String groupSearchFilter;
+    @Value("${spring.ldap.groupSearchFilter")
+    private String groupSearchFilter;
 
     @Value("${spring.ldap.managerDn}")
     private String managerDn;
@@ -63,17 +65,36 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, LdapAuthenticationProvider provider) throws Exception {
         http
-                .authenticationProvider(provider)
-                .authorizeRequests()
-                .anyRequest().fullyAuthenticated()
-                .and()
-                .formLogin();
+                .authorizeHttpRequests(
+                        (requests)->requests
+                                .requestMatchers("/","auth")
+                                .authenticated()
+                                .anyRequest().authenticated()
+                )
+                        .formLogin();
+        http.authenticationProvider(provider);
         return http.build();
+    }
+
+    @Bean
+    public LdapAuthoritiesPopulator authorities(BaseLdapPathContextSource contextSource) {
+        DefaultLdapAuthoritiesPopulator authorities = new DefaultLdapAuthoritiesPopulator(contextSource, groupSearchBase);
+        authorities.setGroupSearchFilter(groupSearchFilter);
+        return authorities;
+    }
+
+    @Bean
+    AuthenticationManager authenticationManager(BaseLdapPathContextSource contextSource, LdapAuthoritiesPopulator authorities) {
+        LdapBindAuthenticationManagerFactory factory = new LdapBindAuthenticationManagerFactory(contextSource);
+        factory.setUserDnPatterns("uid={0},ou=people");
+        factory.setLdapAuthoritiesPopulator(authorities);
+        return factory.createAuthenticationManager();
     }
 
     @Bean
     public LdapAuthenticationProvider ldapAuthenticationProvider() throws Exception {
         LdapAuthenticationProvider provider = new LdapAuthenticationProvider(ldapAuthenticator());
+
         return provider;
     }
 
@@ -95,13 +116,6 @@ public class WebSecurityConfig {
 
     ContextSource contextSource(UnboundIdContainer container) {
         return new DefaultSpringSecurityContextSource("ldap://localhost:389/dc=ten1010,dc=io");
-    }
-
-    @Bean
-    AuthenticationManager authenticationManager(BaseLdapPathContextSource contextSource) {
-        LdapBindAuthenticationManagerFactory factory = new LdapBindAuthenticationManagerFactory(contextSource);
-        factory.setUserDnPatterns("uid={0},ou=people");
-        return factory.createAuthenticationManager();
     }
 
     /*
