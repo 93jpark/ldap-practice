@@ -5,8 +5,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.ldap.core.ContextSource;
+import org.springframework.ldap.core.support.BaseLdapPathContextSource;
+import org.springframework.ldap.core.support.LdapContextSource;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.ldap.LdapBindAuthenticationManagerFactory;
+import org.springframework.security.ldap.DefaultSpringSecurityContextSource;
+import org.springframework.security.ldap.authentication.BindAuthenticator;
+import org.springframework.security.ldap.authentication.LdapAuthenticationProvider;
+import org.springframework.security.ldap.authentication.LdapAuthenticator;
+import org.springframework.security.ldap.ppolicy.PasswordPolicyAwareContextSource;
+import org.springframework.security.ldap.server.UnboundIdContainer;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -50,8 +61,9 @@ public class WebSecurityConfig {
     private String managerPassword;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http, LdapAuthenticationProvider provider) throws Exception {
         http
+                .authenticationProvider(provider)
                 .authorizeRequests()
                 .anyRequest().fullyAuthenticated()
                 .and()
@@ -59,6 +71,40 @@ public class WebSecurityConfig {
         return http.build();
     }
 
+    @Bean
+    public LdapAuthenticationProvider ldapAuthenticationProvider() throws Exception {
+        LdapAuthenticationProvider provider = new LdapAuthenticationProvider(ldapAuthenticator());
+        return provider;
+    }
+
+    @Bean
+    public LdapContextSource ldapContextSource() throws Exception {
+        PasswordPolicyAwareContextSource ctx = new PasswordPolicyAwareContextSource("ldap://localhost:389");
+        ctx.setBase("dc=ten1010,dc=io");
+        ctx.setUserDn("cn=admin,dc=ten1010,dc=io");
+        ctx.setPassword("admin");
+        return ctx;
+    }
+
+    @Bean
+    public LdapAuthenticator ldapAuthenticator() throws Exception {
+        BindAuthenticator authenticator = new BindAuthenticator(ldapContextSource());
+        authenticator.setUserDnPatterns(new String[] {"uid={0},ou=people"});
+        return authenticator;
+    }
+
+    ContextSource contextSource(UnboundIdContainer container) {
+        return new DefaultSpringSecurityContextSource("ldap://localhost:389/dc=ten1010,dc=io");
+    }
+
+    @Bean
+    AuthenticationManager authenticationManager(BaseLdapPathContextSource contextSource) {
+        LdapBindAuthenticationManagerFactory factory = new LdapBindAuthenticationManagerFactory(contextSource);
+        factory.setUserDnPatterns("uid={0},ou=people");
+        return factory.createAuthenticationManager();
+    }
+
+    /*
     @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
@@ -81,4 +127,5 @@ public class WebSecurityConfig {
                 .passwordEncoder(new PlaintextPasswordEncoder())
                 .passwordAttribute("userPassword");
     }
+     */
 }
